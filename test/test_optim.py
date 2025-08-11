@@ -1563,7 +1563,7 @@ class TestOptimRenewed(TestCase):
 
         def _get_model_and_input_tensor(device, dtype, optim_cls):
             if optim_cls.__name__ == "Muon":
-                # Muon only accepts 2D parameter.
+                # Muon only accepts 2D parameters.
                 model = torch.nn.Linear(10, 4, bias=False)
                 input = torch.rand(10, device=device, dtype=dtype)
             else:
@@ -1628,7 +1628,7 @@ class TestOptimRenewed(TestCase):
 
         def _get_model_and_input_tensor(device, dtype, optim_cls):
             if optim_cls.__name__ == "Muon":
-                # Muon only accepts 2D parameter.
+                # Muon only accepts 2D parameters.
                 model = torch.nn.Linear(10, 4, bias=False)
                 input = torch.rand(10, device=device, dtype=dtype)
             else:
@@ -2280,7 +2280,7 @@ class TestOptimRenewed(TestCase):
     def test_non_empty_state(self, device, dtype, optim_info):
         # There are internal tests that check that the state is not empty
         optim_cls = optim_info.optim_cls
-        # Muon only accepts 2D parameter.
+        # Muon only accepts 2D parameters.
         model = torch.nn.Linear(5, 5, bias=False)
         model.to(dtype=dtype, device=device)
         inpt = torch.rand(2, 5, dtype=dtype, device=device)
